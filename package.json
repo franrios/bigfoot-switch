@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "jesus@netbeast.co",
+  "author": "fran@netbeast.co",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
