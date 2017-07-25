@@ -13,12 +13,9 @@ let state = {
 app.use(bodyParser.json())
 
 app.get('/', function (req, res) {
-  // Here you can return the switch state
-  gpio.read(7, function(err, power) {
     console.log('\n State requested:')
-    console.log({ power })
-    res.json({ power })
-  })
+    console.log(state)
+    res.json(state)
 })
 
 app.post('/', function (req, res) {
@@ -48,7 +45,7 @@ const httpServer = app.listen(3000, function () {
   ssdpServer.addUSN('bigfoot:all')
   ssdpServer.start()
 
-  gpio.setup(7, gpio.DIR_OUT, write);
+  gpio.setup(7, gpio.DIR_OUT, () => console.log('Setup done'));
 })
 
 process.on('exit', function() {
