@@ -18,8 +18,7 @@ app.get('/', function (req, res) {
     console.log('\n State requested:')
     console.log({ power })
     res.json({ power })
-  });
-
+  })
 })
 
 app.post('/', function (req, res) {
@@ -33,7 +32,7 @@ app.post('/', function (req, res) {
       console.log('\n State changed:')
       console.log(state)
       res.json(state)
-  });
+  })
 })
 
 const httpServer = app.listen(3000, function () {
